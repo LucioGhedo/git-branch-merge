@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>git-branch-merge</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <!-- root -->
+    <div id="root">
+
+        <!-- container -->
+        <div class="container">
+
+            <!-- titolo pagina -->
+            <header>
+                <div class="page-title">Lista film</div>
+            </header>
+
+            <!-- card container -->
+            <div class="card-container">
+
+                <!-- card -->
+                <div 
+                class="card" 
+                v-for="item in films" 
+                :key="item">
+
+                    <!-- poster container -->
+                    <div class="img-container">
+                        <!-- img -->
+                        <img 
+                        class="poster" 
+                        :src="item.poster" 
+                        :alt="item.title">
+
+                    </div>
+                    <!-- titolo -->
+                    <h2>
+                        {{ item.title }}
+                    </h2>
+
+                    <!-- info container -->
+                    <div class="info-container">
+
+                        <!-- director -->
+                        <p class="text director">
+                            {{ item.director }}
+                        </p>
+
+                        <!-- anno -->
+                        <p class="text year">
+                            {{ item.year }}
+                        </p>
+
+                        <!-- genere -->
+                        <p class="text genre">
+                            {{ item.genre }}
+                        </p>
+
+                        <!-- durata -->
+                        <p class="text durata">
+                            {{ item.duration }}
+                        </p>
+
+                    </div>
+                    <!-- fine info container -->
+
+                </div>
+                <!-- fine card -->
+
+            </div>
+            <!-- fine card container -->
+            
+        </div>
+        <!-- fine container -->
+
+    </div>
+    <!-- fine root -->
+
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
